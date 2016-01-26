@@ -12,7 +12,7 @@ supported_distros = [
 ]
 
 
-def get_valid_class(aclass, param='', value=''):
+def get_valid_class(aclass, param=None, value=None):
     """ 
     Check all the subclasses of a provided
     class to see if the provided parameter 
@@ -23,9 +23,8 @@ def get_valid_class(aclass, param='', value=''):
     provided class itself.
     """
     
-    parameter
-    param = param == '' and 'distro' or param
-    value = value == '' and get_distro() or value
+    param = param is None and 'distro' or param
+    value = value is None and get_distro() or value
     _result = aclass
     subclasses = aclass.__subclasses__()
 
